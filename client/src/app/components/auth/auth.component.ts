@@ -11,14 +11,23 @@ export class AuthComponent {
 
   loginPage:boolean = true;
 
-  registerForms = new FormGroup({
+  registerForm = new FormGroup({
     name: new FormControl('',[Validators.required]),
     email: new FormControl('',[Validators.required]),
     password: new FormControl('',[Validators.required]),
   });
 
+  loginForm = new FormGroup({
+    email:new FormControl('',[Validators.required]),
+    password:new FormControl('',[Validators.required])
+  });
+
   _submitRegisterForm():void {
-    console.log(this.registerForms.value);
+    console.log(this.registerForm.value);
+  }
+
+  _login():void {
+    console.log(this.loginForm.value);
   }
 
   changeLoginPage():void {

@@ -102,3 +102,7 @@ form {
 .footer span:hover {
 	cursor: pointer;
 }
+
+label {
+	color:red;
+}
