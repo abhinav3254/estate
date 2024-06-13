@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -8,6 +9,8 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent {
+
+  constructor(private _router:Router) {}
 
   loginPage:boolean = true;
 
@@ -28,6 +31,9 @@ export class AuthComponent {
 
   _login():void {
     console.log(this.loginForm.value);
+
+    // navigating to home if everything is correct
+    this._router.navigate(['/home']);
   }
 
   changeLoginPage():void {
