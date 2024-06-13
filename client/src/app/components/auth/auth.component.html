@@ -1,0 +1,38 @@
+<div class="auth">
+	<!-- register form -->
+	<div class="auth" *ngIf="!loginPage; else elseBlock">
+		<form>
+			<div class="img-div">
+				<img src="https://cdn.pixabay.com/photo/2022/05/10/16/13/building-7187496_1280.jpg" alt="hotel-img"/>
+			</div>
+			<div class="form-elements">
+				<div class="header"><p>Register Here</p></div>
+				<input type="text" placeholder="Name" />
+				<input type="text" placeholder="Email" />
+				<input type="password" placeholder="Password" />
+				<button type="submit">submit</button>
+				<div class="footer">
+					<p>Already have an account?<span (click)="changeLoginPage()">Login</span></p>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!-- login page -->
+	<ng-template #elseBlock class="auth">
+		<form>
+		<div class="img-div">
+			<img src="https://cdn.pixabay.com/photo/2018/08/27/15/28/hotel-3635248_1280.png" alt="hotel-img"/>
+		</div>
+		<div class="form-elements">
+			<div class="header"><p>Login Here</p></div>
+			<input type="text" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button type="submit">submit</button>
+			<div class="footer">
+				<p>Don't have an account?<span (click)="changeLoginPage()">Signup</span></p>
+			</div>
+		</div>
+	</form>
+	</ng-template>
+</div>
